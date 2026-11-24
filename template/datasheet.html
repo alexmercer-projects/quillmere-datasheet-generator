@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{sku}} | {{name}} | Quillmere concept demo</title>
+  <base href="{{template_base}}">
+  <link rel="stylesheet" href="datasheet.css">
+  <style>
+    @font-face { font-family: Schibsted; src: url("{{fonts_base}}SchibstedGrotesk.woff2") format("woff2"); font-weight: 100 900; }
+    @font-face { font-family: JetBrains; src: url("{{fonts_base}}JetBrainsMono.woff2") format("woff2"); font-weight: 100 800; }
+  </style>
+</head>
+<body>
+<main class="sheet">
+  <header class="mast">
+    <div class="brand">{{brand_mark}}<div><strong>Quillmere</strong><small>Lighting Co.</small></div></div>
+    <div class="mast-meta"><span>Architectural lighting</span><strong>Product datasheet / Demo</strong></div>
+  </header>
+
+  <section class="intro" aria-labelledby="product-title">
+    <div class="identity">
+      <p class="overline" data-fit="family and SKU">{{family}} <span>/</span> {{sku}}</p>
+      <h1 id="product-title" data-fit="product name">{{name}}</h1>
+      <p class="tagline" data-fit="tagline">{{tagline}}</p>
+      <p class="description" data-fit="description">{{description}}</p>
+    </div>
+    <figure class="product-art">
+      <span class="plate-label">Fixture view</span>
+      <img src="{{image_uri}}" alt="{{name}} fixture illustration">
+      <figcaption>Illustration / NTS</figcaption>
+    </figure>
+  </section>
+
+  <section class="figures" aria-label="Key figures">
+    {{#each figures}}
+    <div class="figure" data-fit="{{label}}">
+      <p>{{label}}</p>
+      <strong>{{value}} <small>{{unit}}</small></strong>
+    </div>
+    {{/each}}
+  </section>
+
+  <section class="details" aria-label="Specifications and dimensions">
+    <div class="specs">
+      <h2>Technical specifications</h2>
+      <div class="spec-columns">
+        {{#each spec_groups}}
+        <section class="spec-group" data-fit="{{heading}} specifications">
+          <h3>{{heading}}</h3>
+          <dl>
+            {{#each items}}<div><dt>{{label}}</dt><dd>{{value}}</dd></div>{{/each}}
+          </dl>
+        </section>
+        {{/each}}
+      </div>
+    </div>
+    <div class="side-details">
+      <section class="dimensions">
+        <h2>Overall dimensions</h2>
+        {{dimension_drawing}}
+        <p class="caption">Outline envelopes / Not to scale</p>
+      </section>
+      <section class="finishes">
+        <h2>Finish options</h2>
+        <ul data-fit="finish options">
+          {{#each finish_options}}
+          <li><span class="swatch" style="--swatch: {{color}}"></span><span>{{name}}</span><small>{{code}}</small></li>
+          {{/each}}
+        </ul>
+      </section>
+    </div>
+  </section>
+
+  <section class="ordering" aria-label="Ordering and accessories">
+    <div class="code-block">
+      <h2>Ordering code</h2>
+      <p class="code" data-fit="ordering code">{{ordering_code}}</p>
+      <p class="order-guide" data-fit="ordering options">{{cct_options}} K + a finish code</p>
+      <p class="order-example" data-fit="ordering example">Example <strong>{{ordering_example}}</strong></p>
+    </div>
+    <div class="install">
+      <h2>Accessories &amp; notes</h2>
+      <p data-fit="accessories">{{accessory_text}}</p>
+      <p class="install-note" data-fit="installation notes">{{note_text}}</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Concept demo - example data, not a real product.</p>
+    <p class="folio">Rev {{revision}} <span>·</span> {{date}} <span>·</span> Catalog p. {{page}}</p>
+  </footer>
+</main>
+</body>
+</html>
