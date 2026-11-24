@@ -1,0 +1,5 @@
+Schibsted Grotesk (c) 2023 The Schibsted Grotesk Project Authors (https://github.com/schibsted/schibsted-grotesk)
+JetBrains Mono (c) 2020 The JetBrains Mono Project Authors (https://github.com/JetBrains/JetBrainsMono)
+
+Both are licensed under the SIL Open Font License, Version 1.1.
+The full license text is at https://openfontlicense.org/open-font-license-official-text/
