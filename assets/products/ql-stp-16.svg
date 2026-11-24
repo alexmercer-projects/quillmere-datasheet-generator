@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="80 36 254 245" role="img" aria-label="Lintel 160 fixture line drawing">
+  <style>.glow { stroke: #956325; }</style>
+  <g fill="none" stroke="#253b3a" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M90 130l38-31 167-10 37 22v74l-188 38-54-33z M90 130l54 27 188-46 M144 157v66 M99 132v52l36 23 M157 163l162-37v49l-162 32z"/><path d="M166 171l144-32 M166 181l144-32 M166 191l144-32" class="glow"/>
+  </g>
+</svg>

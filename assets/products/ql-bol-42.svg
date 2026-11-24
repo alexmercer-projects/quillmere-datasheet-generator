@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="80 36 254 245" role="img" aria-label="Strata 420 fixture line drawing">
+  <style>.glow { stroke: #956325; }</style>
+  <g fill="none" stroke="#253b3a" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M155 52h81l36 25v172h-81l-36-25z M155 52l36 25h81 M191 77v172 M145 225v18l44 28h94v-15l-11-7 M145 243h43l12 8 M189 271v-17"/><path d="M204 95h54v37h-54z M208 120h46 M209 109h44" class="glow"/>
+  </g>
+</svg>

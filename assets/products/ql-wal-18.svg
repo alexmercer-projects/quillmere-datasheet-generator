@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="80 36 254 245" role="img" aria-label="Fold 180 fixture line drawing">
+  <style>.glow { stroke: #956325; }</style>
+  <g fill="none" stroke="#253b3a" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M119 91 256 86 306 111 166 117Z M119 91v111l47 26 140-6V111 M166 117v111 M119 147l47 26 140-6 M111 108l-13 3v91l21 12"/><path d="M161 98l72-3 26 13-72 3z M176 204l74-3 22 11-74 3z" class="glow"/>
+  </g>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="80 36 254 245" role="img" aria-label="Alder 500 fixture line drawing">
+  <style>.glow { stroke: #956325; }</style>
+  <g fill="none" stroke="#253b3a" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M106 129l54-71 97 5 55 76-105 29z M160 58l47 110 M106 129v13l101 39 105-29v-13 M207 168v13 M198 179v73l10 16 11-16v-74 M198 252l21-1"/><path d="M122 146l84 31 91-25 M156 167l-9 14 M262 167l9 13" class="glow"/>
+  </g>
+</svg>

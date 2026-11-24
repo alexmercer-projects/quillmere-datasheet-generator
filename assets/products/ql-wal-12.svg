@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="80 36 254 245" role="img" aria-label="Cairn 120 fixture line drawing">
+  <style>.glow { stroke: #956325; }</style>
+  <g fill="none" stroke="#253b3a" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M131 68 267 68 302 98 302 219 166 219 131 185Z M131 68 166 98H302 M166 98v121 M131 185l136 1 35 33 M267 186V68"/><path d="M123 85h-18v106l26 23h24 M105 191h18"/><path d="M172 177h84l20 16h-84z M192 193l-12 12m54-9v11m25-11 13 9" class="glow"/>
+  </g>
+</svg>

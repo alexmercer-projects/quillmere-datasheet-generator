@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="80 36 254 245" role="img" aria-label="Beacon 120 fixture line drawing">
+  <style>.glow { stroke: #956325; }</style>
+  <g fill="none" stroke="#253b3a" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M114 133l61-69 92-8 34 37-61 69-92 9z M114 133l92-7 61-70 M206 126l34 36 M131 129l48-53 69-6 M162 174l-7 49 66 22 43-39v-47 M155 223l-23 12 49 24 53-4 16-15-18-8"/><path d="M156 136l49-4 44-49-51 4z" class="glow"/><circle cx="253" cy="171" r="7"/>
+  </g>
+</svg>

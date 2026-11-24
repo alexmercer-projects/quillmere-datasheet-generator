@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="80 36 254 245" role="img" aria-label="Mere 900 fixture line drawing">
+  <style>.glow { stroke: #956325; }</style>
+  <g fill="none" stroke="#253b3a" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M152 55l90-11 36 21v190l-91 12-35-21z M152 55l35 22 91-12 M187 77v190 M152 225l35 22 91-12 M170 60l63-8 23 12 M199 246v8 M267 237v8"/><path d="M199 94l67-8v67l-67 8z M202 104l60-7 M202 113l60-7 M202 122l60-7" class="glow"/>
+  </g>
+</svg>

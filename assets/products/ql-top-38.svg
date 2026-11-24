@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="80 36 254 245" role="img" aria-label="Lantern 380 fixture line drawing">
+  <style>.glow { stroke: #956325; }</style>
+  <g fill="none" stroke="#253b3a" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M92 98l97-44 135 29-98 46z M92 98v21l134 31 98-46V83 M226 129v21 M109 124l36 90 88 24 70-96v-29 M225 150l8 88 M114 127l39 81 72 20 M145 214v12l88 24 70-96v-12 M181 235v25l29 8 25-7v-13"/><path d="M125 125l99 23 66-33 M153 139l30 7 M202 151l20 5 31-14" class="glow"/>
+  </g>
+</svg>

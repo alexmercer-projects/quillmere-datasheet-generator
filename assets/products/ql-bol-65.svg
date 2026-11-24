@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="80 36 254 245" role="img" aria-label="Reed 650 fixture line drawing">
+  <style>.glow { stroke: #956325; }</style>
+  <g fill="none" stroke="#253b3a" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round">
+    <ellipse cx="208" cy="61" rx="47" ry="15"/><path d="M161 61v42c0 9 21 15 47 15s47-6 47-15V61 M177 115v132c0 6 14 11 31 11s31-5 31-11V115 M177 233c-31 9-20 25 31 25s62-16 31-25 M147 247v12c0 9 27 15 61 15s61-6 61-15v-12"/><path d="M172 75v19c0 8 16 13 36 13s36-5 36-13V75 M175 84c10 11 56 11 66 0" class="glow"/>
+  </g>
+</svg>

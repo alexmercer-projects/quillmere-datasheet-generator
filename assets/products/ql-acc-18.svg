@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="80 36 254 245" role="img" aria-label="Gable 180 fixture line drawing">
+  <style>.glow { stroke: #956325; }</style>
+  <g fill="none" stroke="#253b3a" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M101 114l43-42 144 14 34 34-46 79-146-18z M101 114l144 16 43-44 M245 130l31 69 M151 183l-14 44 72 23 89-19v-64 M137 227l-19 11 65 28 85-4 21-12-6-15"/><path d="M119 123l117 13 23 50-117-14z M125 133l113 13 M129 144l114 13 M134 155l114 13" class="glow"/><circle cx="294" cy="175" r="7"/>
+  </g>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="80 36 254 245" role="img" aria-label="Fern 280 fixture line drawing">
+  <style>.glow { stroke: #956325; }</style>
+  <g fill="none" stroke="#253b3a" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M113 109l53-39h82l55 39v13c0 17-42 31-95 31s-95-14-95-31z M113 109c0 17 42 31 95 31s95-14 95-31 M198 153v84h20v-84 M198 237v18l10 15 10-15v-18 M166 70c11 12 71 12 82 0"/><path d="M124 130c15 18 153 29 168 0" class="glow"/>
+  </g>
+</svg>

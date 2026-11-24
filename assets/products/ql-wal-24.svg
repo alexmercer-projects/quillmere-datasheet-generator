@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="80 36 254 245" role="img" aria-label="Vesper 240 fixture line drawing">
+  <style>.glow { stroke: #956325; }</style>
+  <g fill="none" stroke="#253b3a" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M150 80l73-23 46 18v157l-73 24-46-21z M150 80l46 20 73-25 M196 100v156 M150 235l73-25 46 22 M223 57v48 M142 91l-12 5v135l20 13"/><path d="M212 114l41-13v111l-41 14z M223 125l19-7v85l-19 6z" class="glow"/>
+  </g>
+</svg>

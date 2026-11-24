@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="80 36 254 245" role="img" aria-label="Rush 350 fixture line drawing">
+  <style>.glow { stroke: #956325; }</style>
+  <g fill="none" stroke="#253b3a" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M157 140l-18-12v-39l17-20 103-10 33 23v29l-105 11-30-19v147l-18-13V128 M157 69l30 20 105-7 M187 89v33 M157 250l-7 19-11-32"/><path d="M192 109l89-9 M195 129l-11 15 M233 125v16 M268 121l12 13" class="glow"/>
+  </g>
+</svg>

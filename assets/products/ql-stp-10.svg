@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="80 36 254 245" role="img" aria-label="Sill 100 fixture line drawing">
+  <style>.glow { stroke: #956325; }</style>
+  <g fill="none" stroke="#253b3a" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M113 119l39-28 142 10 29 22v82l-142 16-68-35z M113 119l68 31 142-27 M181 150v71 M152 91v18 M121 124v57l49 27 M190 153l124-21v65l-124 14z"/><path d="M203 165l98-17v32l-98 14z M207 174l90-15 M207 181l90-15" class="glow"/>
+  </g>
+</svg>

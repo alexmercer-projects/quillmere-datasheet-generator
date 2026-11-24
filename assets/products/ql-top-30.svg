@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="80 36 254 245" role="img" aria-label="Orbit 300 fixture line drawing">
+  <style>.glow { stroke: #956325; }</style>
+  <g fill="none" stroke="#253b3a" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round">
+    <ellipse cx="207" cy="111" rx="113" ry="38"/><path d="M94 111v28c0 21 51 38 113 38s113-17 113-38v-28 M181 176v61c0 10 52 10 52 0v-61 M198 177v46m19-46v46 M193 207h28 M106 129c14 17 55 30 101 30 47 0 88-13 102-30"/><path d="M118 153c22 13 57 20 89 20s68-7 89-20" class="glow"/>
+  </g>
+</svg>
