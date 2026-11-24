@@ -1,0 +1,11 @@
+{
+  "source": "quillmere-products.xlsx",
+  "summary": {
+    "products": 16,
+    "sheets": 16,
+    "errors": 0,
+    "warnings": 0,
+    "catalog_pages": 18
+  },
+  "issues": []
+}
