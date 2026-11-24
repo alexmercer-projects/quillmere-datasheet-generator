@@ -1,0 +1,157 @@
+{
+  "signature": "e6d370b75e63700cc429d65a4ee1bb5c1ee73c03c11dcd34e7b62d4e790fb3cd",
+  "source": "bad-products.csv",
+  "summary": {
+    "products": 4,
+    "sheets": 1,
+    "errors": 17,
+    "warnings": 1,
+    "catalog_pages": 3
+  },
+  "issues": [
+    {
+      "severity": "error",
+      "code": "required",
+      "message": "A value is required.",
+      "field": "name",
+      "row": 2,
+      "sku": "QL-WAL-12"
+    },
+    {
+      "severity": "error",
+      "code": "length",
+      "message": "104 characters exceeds the 70-character limit.",
+      "field": "tagline",
+      "row": 2,
+      "sku": "QL-WAL-12"
+    },
+    {
+      "severity": "error",
+      "code": "number",
+      "message": "Enter a finite number without separators.",
+      "field": "lumens",
+      "row": 2,
+      "sku": "QL-WAL-12"
+    },
+    {
+      "severity": "error",
+      "code": "range",
+      "message": "Whole number from 0 to 100.",
+      "field": "cri",
+      "row": 2,
+      "sku": "QL-WAL-12"
+    },
+    {
+      "severity": "error",
+      "code": "unit",
+      "message": "Expected mm; got in.",
+      "field": "width_mm",
+      "row": 2,
+      "sku": "QL-WAL-12"
+    },
+    {
+      "severity": "error",
+      "code": "unit",
+      "message": "Expected kg; got lbs.",
+      "field": "weight_kg",
+      "row": 2,
+      "sku": "QL-WAL-12"
+    },
+    {
+      "severity": "error",
+      "code": "duplicate",
+      "message": "The SKU appears on more than one row.",
+      "field": "sku",
+      "row": 2,
+      "sku": "QL-WAL-12"
+    },
+    {
+      "severity": "error",
+      "code": "unit",
+      "message": "Operating temperatures must use Celsius (°C).",
+      "field": "operating_temp_c",
+      "row": 2,
+      "sku": "QL-WAL-12"
+    },
+    {
+      "severity": "error",
+      "code": "image",
+      "message": "Fixture image 'missing.svg' was not found in the image directory.",
+      "field": "image",
+      "row": 2,
+      "sku": "QL-WAL-12"
+    },
+    {
+      "severity": "error",
+      "code": "finish",
+      "message": "Unknown finish 'Copper'.",
+      "field": "finishes",
+      "row": 2,
+      "sku": "QL-WAL-12"
+    },
+    {
+      "severity": "warning",
+      "code": "optional",
+      "message": "No accessories listed. The sheet will show 'None listed'.",
+      "field": "accessories",
+      "row": 2,
+      "sku": "QL-WAL-12"
+    },
+    {
+      "severity": "error",
+      "code": "length",
+      "message": "10 characters exceeds the 4-character limit.",
+      "field": "ip_rating",
+      "row": 3,
+      "sku": "QL-WAL-12"
+    },
+    {
+      "severity": "error",
+      "code": "format",
+      "message": "Example code in the form IP65.",
+      "field": "ip_rating",
+      "row": 3,
+      "sku": "QL-WAL-12"
+    },
+    {
+      "severity": "error",
+      "code": "length",
+      "message": "106 characters exceeds the 105-character limit.",
+      "field": "notes",
+      "row": 3,
+      "sku": "QL-WAL-12"
+    },
+    {
+      "severity": "error",
+      "code": "duplicate",
+      "message": "The SKU appears on more than one row.",
+      "field": "sku",
+      "row": 3,
+      "sku": "QL-WAL-12"
+    },
+    {
+      "severity": "error",
+      "code": "efficacy",
+      "message": "Lumens ÷ watts is 80.00 lm/W. Allowed difference is 2%.",
+      "field": "efficacy",
+      "row": 3,
+      "sku": "QL-WAL-12"
+    },
+    {
+      "severity": "error",
+      "code": "format",
+      "message": "Whole Kelvin values, 1800 through 6500, split with /. Each value must be unique.",
+      "field": "cct_k",
+      "row": 3,
+      "sku": "QL-WAL-12"
+    },
+    {
+      "severity": "error",
+      "code": "overflow",
+      "message": "Text exceeds the print box by 0 px wide, 72 px tall.",
+      "field": "description",
+      "row": 4,
+      "sku": "QL-BOL-ERROR"
+    }
+  ]
+}

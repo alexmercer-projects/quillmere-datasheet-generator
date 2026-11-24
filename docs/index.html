@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="description" content="A portfolio concept demo that turns a product spreadsheet into print-ready lighting datasheets.">
+  <title>Quillmere Lighting Co. / Datasheet Generator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="filters.js" defer></script>
+</head>
+<body>
+<div class="am-demo-bar" role="note" style="font:14px/1.45 system-ui,-apple-system,'Segoe UI',sans-serif;background:#0f0f0f;color:#f3f3ef;padding:10px 16px;display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:space-between;align-items:center;position:relative;z-index:50"><span><b>Concept demo by Alex Mercer.</b> Fictional business, not client work. Quillmere Lighting Co., its products, specs and ratings are made up.</span><a href="../index.html" style="color:#f3f3ef;text-decoration:underline;text-underline-offset:3px">Back to Alex Mercer&#39;s portfolio</a></div>
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a class="site-brand" href="#top"><svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="8"/><path d="M10 26h20M13 21a7 7 0 0 1 14 0M20 7v4m-9 2 3 3m15-3-3 3"/></svg><span><b>Quillmere Lighting Co.</b><small>Datasheet generator</small></span></a>
+    <nav aria-label="Project sections">
+      <a href="#workflow">Workflow</a><a href="#sheets">Sheets</a><a href="#downloads">Downloads</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero wrap" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="eyebrow ruled">Spreadsheet to PDF</p>
+      <h1 id="hero-title">16 products in one spreadsheet.<br><span>16 print-ready datasheets out.</span></h1>
+      <p class="lede">I built a small pipeline for a fictional lighting company. It reads each fixture from Excel, checks the data and print layout, then uses one template to make individual sheets and a combined catalog.</p>
+      <div class="actions">
+        <a class="button primary" href="#sheets">See the sheets <span aria-hidden="true">↓</span></a>
+        <a class="button" href="https://github.com/alexmercer-projects/quillmere-datasheet-generator">Read the code <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <figure class="hero-visual">
+      <div class="drawing-board">
+        <span class="board-label"><span></span> Print preview</span>
+        <a href="sheets/QL-BOL-42.pdf" aria-label="Open the Strata 420 PDF">
+          <img src="img/featured.webp" width="960" height="1243" alt="Full Strata 420 sheet with a bollard drawing, specifications and finish swatches" fetchpriority="high">
+        </a>
+        <span class="board-size">8.5 × 11 IN</span>
+      </div>
+      <figcaption><span>QL-BOL-42 / Strata 420</span><span>US Letter · PDF</span></figcaption>
+    </figure>
+  </section>
+
+  <section id="workflow" class="band workflow-band">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow ruled">Workflow</p>
+        <h2>How it works</h2>
+        <p>One row becomes one sheet. Editing the source values changes the next PDF export.</p>
+      </div>
+      <div class="workflow">
+        <article class="step">
+          <p class="eyebrow"><span>01</span> Spreadsheet</p>
+          <h3>Read the rows</h3>
+          <div class="table-scroll" tabindex="0" aria-label="Scrollable product spreadsheet excerpt">
+            <table>
+              <caption>Excerpt from the Products tab</caption>
+              <thead><tr><th scope="col">SKU</th><th scope="col">Product</th><th scope="col">lm</th><th scope="col">W</th></tr></thead>
+              <tbody>
+                <tr><td>QL-WAL-12</td><td>Cairn 120</td><td>640</td><td>8</td></tr><tr><td>QL-BOL-42</td><td>Strata 420</td><td>840</td><td>10</td></tr><tr><td>QL-PTH-28</td><td>Fern 280</td><td>250</td><td>4</td></tr><tr><td>QL-STP-10</td><td>Sill 100</td><td>110</td><td>2</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+        <span class="flow-arrow" aria-hidden="true">→</span>
+        <article class="step code-step">
+          <p class="eyebrow"><span>02</span> HTML + CSS</p>
+          <h3>Fill the template</h3>
+          <pre><code>&lt;h1 data-fit&gt;<b>&#123;&#123;name&#125;&#125;</b>&lt;/h1&gt;
+&lt;p&gt;<b>&#123;&#123;tagline&#125;&#125;</b>&lt;/p&gt;
+
+<b>&#123;&#123;#each finish_options&#125;&#125;</b>
+  &lt;li&gt;<b>&#123;&#123;name&#125;&#125;</b>&lt;/li&gt;
+<b>&#123;&#123;/each&#125;&#125;</b></code></pre>
+        </article>
+        <span class="flow-arrow" aria-hidden="true">→</span>
+        <article class="step output-step">
+          <p class="eyebrow"><span>03</span> PDF</p>
+          <h3>Print the sheet</h3>
+          <a href="sheets/QL-BOL-42.pdf">
+            <img src="img/QL-BOL-42.webp" width="600" height="777" alt="Strata 420 finished datasheet" loading="lazy">
+            <span>Open the finished sheet <span aria-hidden="true">↗</span></span>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="checks" class="band wrap">
+    <div class="section-head">
+      <p class="eyebrow ruled">Validation</p>
+      <h2>What gets checked</h2>
+      <p>The generator checks the spreadsheet first, then measures the actual print layout in Chrome.</p>
+    </div>
+    <div class="check-grid">
+      <article class="check"><p class="eyebrow">01 / Identity</p><h3>Required fields and SKUs</h3><p>Finds empty cells and flags every row that shares a duplicate SKU.</p></article>
+      <article class="check"><p class="eyebrow">02 / Measurements</p><h3>Numbers and units</h3><p>Checks ranges, expects millimetres, kilograms and Celsius, and recalculates efficacy within 2%.</p></article>
+      <article class="check"><p class="eyebrow">03 / Content</p><h3>Images, finishes and length</h3><p>Checks local image files, known finish names and character limits for each text field.</p></article>
+      <article class="check"><p class="eyebrow">04 / Print</p><h3>Text fit and page count</h3><p>Measures marked text boxes after fonts load. Poppler confirms the PDF has exactly one page.</p></article>
+    </div>
+    <div class="example">
+      <div class="report-example">
+        <p class="eyebrow">Deliberately broken spreadsheet</p>
+        <h3>Example validation report</h3>
+        <p>4 rows checked · 17 errors · 1 warning.</p>
+        <ul class="findings">
+          <li><span class="severity error">error</span><div><strong>sku</strong><span>The SKU appears on more than one row.</span></div></li><li><span class="severity error">error</span><div><strong>width_mm</strong><span>Expected mm; got in.</span></div></li><li><span class="severity error">error</span><div><strong>description</strong><span>Text exceeds the print box by 0 px wide, 72 px tall.</span></div></li><li><span class="severity warning">warning</span><div><strong>accessories</strong><span>No accessories listed. The sheet will show &#x27;None listed&#x27;.</span></div></li>
+        </ul>
+        <a class="text-link" href="files/example-validation-report.md">Read the example report <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="overflow-example">
+        <p class="eyebrow">Print layout example</p>
+        <h3>When a description runs long</h3>
+        <p>The longer description passes the 420-character limit. Chrome catches the part that falls below the text box.</p>
+        <div class="comparison">
+          <figure><img src="img/overflow-before.webp" width="640" height="380" loading="lazy" alt="Long description clipped before its final sentences"><figcaption>Before · overflow error</figcaption></figure>
+          <figure><img src="img/overflow-after.webp" width="640" height="380" loading="lazy" alt="Shortened description fitting on the Strata 420 sheet"><figcaption>After · fits the sheet</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sheets" class="band gallery-band">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow ruled">Output / US Letter</p>
+        <h2>The fixture sheets</h2>
+        <p>Browse all 16 fictional fixtures. Each preview opens its one-page PDF.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filter sheets by fixture family">
+        <button type="button" data-filter="" aria-pressed="true">All sheets</button>
+        <button type="button" data-filter="Wall sconces" aria-pressed="false">Wall sconces</button><button type="button" data-filter="Bollards" aria-pressed="false">Bollards</button><button type="button" data-filter="Path lights" aria-pressed="false">Path lights</button><button type="button" data-filter="Step lights" aria-pressed="false">Step lights</button><button type="button" data-filter="Accent lights" aria-pressed="false">Accent lights</button><button type="button" data-filter="Pole tops" aria-pressed="false">Pole tops</button>
+      </div>
+      <p class="sheet-count" aria-live="polite">16 sheets</p>
+      <div class="sheet-grid">
+        
+        <article class="sheet-card" data-family="Wall sconces">
+          <a href="sheets/QL-WAL-12.pdf">
+            <div class="thumb"><img src="img/QL-WAL-12.webp" width="600" height="777" alt="Cairn 120 datasheet preview with fixture line art" loading="lazy"></div>
+            <div class="card-label">
+              <p>Wall sconces <span>·</span> QL-WAL-12</p>
+              <h3>Cairn 120<span aria-hidden="true">↗</span></h3>
+            </div>
+          </a>
+        </article>
+        
+        <article class="sheet-card" data-family="Wall sconces">
+          <a href="sheets/QL-WAL-18.pdf">
+            <div class="thumb"><img src="img/QL-WAL-18.webp" width="600" height="777" alt="Fold 180 datasheet preview with fixture line art" loading="lazy"></div>
+            <div class="card-label">
+              <p>Wall sconces <span>·</span> QL-WAL-18</p>
+              <h3>Fold 180<span aria-hidden="true">↗</span></h3>
+            </div>
+          </a>
+        </article>
+        
+        <article class="sheet-card" data-family="Wall sconces">
+          <a href="sheets/QL-WAL-24.pdf">
+            <div class="thumb"><img src="img/QL-WAL-24.webp" width="600" height="777" alt="Vesper 240 datasheet preview with fixture line art" loading="lazy"></div>
+            <div class="card-label">
+              <p>Wall sconces <span>·</span> QL-WAL-24</p>
+              <h3>Vesper 240<span aria-hidden="true">↗</span></h3>
+            </div>
+          </a>
+        </article>
+        
+        <article class="sheet-card" data-family="Bollards">
+          <a href="sheets/QL-BOL-42.pdf">
+            <div class="thumb"><img src="img/QL-BOL-42.webp" width="600" height="777" alt="Strata 420 datasheet preview with fixture line art" loading="lazy"></div>
+            <div class="card-label">
+              <p>Bollards <span>·</span> QL-BOL-42</p>
+              <h3>Strata 420<span aria-hidden="true">↗</span></h3>
+            </div>
+          </a>
+        </article>
+        
+        <article class="sheet-card" data-family="Bollards">
+          <a href="sheets/QL-BOL-65.pdf">
+            <div class="thumb"><img src="img/QL-BOL-65.webp" width="600" height="777" alt="Reed 650 datasheet preview with fixture line art" loading="lazy"></div>
+            <div class="card-label">
+              <p>Bollards <span>·</span> QL-BOL-65</p>
+              <h3>Reed 650<span aria-hidden="true">↗</span></h3>
+            </div>
+          </a>
+        </article>
+        
+        <article class="sheet-card" data-family="Bollards">
+          <a href="sheets/QL-BOL-90.pdf">
+            <div class="thumb"><img src="img/QL-BOL-90.webp" width="600" height="777" alt="Mere 900 datasheet preview with fixture line art" loading="lazy"></div>
+            <div class="card-label">
+              <p>Bollards <span>·</span> QL-BOL-90</p>
+              <h3>Mere 900<span aria-hidden="true">↗</span></h3>
+            </div>
+          </a>
+        </article>
+        
+        <article class="sheet-card" data-family="Path lights">
+          <a href="sheets/QL-PTH-28.pdf">
+            <div class="thumb"><img src="img/QL-PTH-28.webp" width="600" height="777" alt="Fern 280 datasheet preview with fixture line art" loading="lazy"></div>
+            <div class="card-label">
+              <p>Path lights <span>·</span> QL-PTH-28</p>
+              <h3>Fern 280<span aria-hidden="true">↗</span></h3>
+            </div>
+          </a>
+        </article>
+        
+        <article class="sheet-card" data-family="Path lights">
+          <a href="sheets/QL-PTH-35.pdf">
+            <div class="thumb"><img src="img/QL-PTH-35.webp" width="600" height="777" alt="Rush 350 datasheet preview with fixture line art" loading="lazy"></div>
+            <div class="card-label">
+              <p>Path lights <span>·</span> QL-PTH-35</p>
+              <h3>Rush 350<span aria-hidden="true">↗</span></h3>
+            </div>
+          </a>
+        </article>
+        
+        <article class="sheet-card" data-family="Path lights">
+          <a href="sheets/QL-PTH-50.pdf">
+            <div class="thumb"><img src="img/QL-PTH-50.webp" width="600" height="777" alt="Alder 500 datasheet preview with fixture line art" loading="lazy"></div>
+            <div class="card-label">
+              <p>Path lights <span>·</span> QL-PTH-50</p>
+              <h3>Alder 500<span aria-hidden="true">↗</span></h3>
+            </div>
+          </a>
+        </article>
+        
+        <article class="sheet-card" data-family="Step lights">
+          <a href="sheets/QL-STP-10.pdf">
+            <div class="thumb"><img src="img/QL-STP-10.webp" width="600" height="777" alt="Sill 100 datasheet preview with fixture line art" loading="lazy"></div>
+            <div class="card-label">
+              <p>Step lights <span>·</span> QL-STP-10</p>
+              <h3>Sill 100<span aria-hidden="true">↗</span></h3>
+            </div>
+          </a>
+        </article>
+        
+        <article class="sheet-card" data-family="Step lights">
+          <a href="sheets/QL-STP-16.pdf">
+            <div class="thumb"><img src="img/QL-STP-16.webp" width="600" height="777" alt="Lintel 160 datasheet preview with fixture line art" loading="lazy"></div>
+            <div class="card-label">
+              <p>Step lights <span>·</span> QL-STP-16</p>
+              <h3>Lintel 160<span aria-hidden="true">↗</span></h3>
+            </div>
+          </a>
+        </article>
+        
+        <article class="sheet-card" data-family="Accent lights">
+          <a href="sheets/QL-ACC-09.pdf">
+            <div class="thumb"><img src="img/QL-ACC-09.webp" width="600" height="777" alt="Flint 90 datasheet preview with fixture line art" loading="lazy"></div>
+            <div class="card-label">
+              <p>Accent lights <span>·</span> QL-ACC-09</p>
+              <h3>Flint 90<span aria-hidden="true">↗</span></h3>
+            </div>
+          </a>
+        </article>
+        
+        <article class="sheet-card" data-family="Accent lights">
+          <a href="sheets/QL-ACC-12.pdf">
+            <div class="thumb"><img src="img/QL-ACC-12.webp" width="600" height="777" alt="Beacon 120 datasheet preview with fixture line art" loading="lazy"></div>
+            <div class="card-label">
+              <p>Accent lights <span>·</span> QL-ACC-12</p>
+              <h3>Beacon 120<span aria-hidden="true">↗</span></h3>
+            </div>
+          </a>
+        </article>
+        
+        <article class="sheet-card" data-family="Accent lights">
+          <a href="sheets/QL-ACC-18.pdf">
+            <div class="thumb"><img src="img/QL-ACC-18.webp" width="600" height="777" alt="Gable 180 datasheet preview with fixture line art" loading="lazy"></div>
+            <div class="card-label">
+              <p>Accent lights <span>·</span> QL-ACC-18</p>
+              <h3>Gable 180<span aria-hidden="true">↗</span></h3>
+            </div>
+          </a>
+        </article>
+        
+        <article class="sheet-card" data-family="Pole tops">
+          <a href="sheets/QL-TOP-30.pdf">
+            <div class="thumb"><img src="img/QL-TOP-30.webp" width="600" height="777" alt="Orbit 300 datasheet preview with fixture line art" loading="lazy"></div>
+            <div class="card-label">
+              <p>Pole tops <span>·</span> QL-TOP-30</p>
+              <h3>Orbit 300<span aria-hidden="true">↗</span></h3>
+            </div>
+          </a>
+        </article>
+        
+        <article class="sheet-card" data-family="Pole tops">
+          <a href="sheets/QL-TOP-38.pdf">
+            <div class="thumb"><img src="img/QL-TOP-38.webp" width="600" height="777" alt="Lantern 380 datasheet preview with fixture line art" loading="lazy"></div>
+            <div class="card-label">
+              <p>Pole tops <span>·</span> QL-TOP-38</p>
+              <h3>Lantern 380<span aria-hidden="true">↗</span></h3>
+            </div>
+          </a>
+        </article>
+        
+      </div>
+    </div>
+  </section>
+
+  <section id="downloads" class="band wrap">
+    <div class="section-head">
+      <p class="eyebrow ruled">Project files</p>
+      <h2>Downloads</h2>
+    </div>
+    <div class="downloads">
+      
+      <a href="files/quillmere-catalog-DEMO.pdf" download><span class="filetype">PDF</span><span><b>Product catalog</b><small>18 pages · cover, contents and all sheets</small></span><span class="download-arrow" aria-hidden="true">↓</span></a>
+      
+      <a href="files/quillmere-products.xlsx" download><span class="filetype">XLSX</span><span><b>Product workbook</b><small>16 rows and a Read me tab</small></span><span class="download-arrow" aria-hidden="true">↓</span></a>
+      
+      <a href="files/quillmere-products.csv" download><span class="filetype">CSV</span><span><b>Source spreadsheet</b><small>The same rows in plain text</small></span><span class="download-arrow" aria-hidden="true">↓</span></a>
+      
+      <a href="files/quillmere-template.zip" download><span class="filetype">ZIP</span><span><b>Print template</b><small>HTML, CSS and local fonts</small></span><span class="download-arrow" aria-hidden="true">↓</span></a>
+      
+      <a href="sheets/QL-BOL-42.pdf" download><span class="filetype">PDF</span><span><b>Strata 420 sheet</b><small>Sample bollard · one page</small></span><span class="download-arrow" aria-hidden="true">↓</span></a>
+      
+      <a href="sheets/QL-WAL-12.pdf" download><span class="filetype">PDF</span><span><b>Cairn 120 sheet</b><small>Sample wall sconce · one page</small></span><span class="download-arrow" aria-hidden="true">↓</span></a>
+      
+      <a href="files/validation-report.md" download><span class="filetype">MD</span><span><b>Validation report</b><small>Results for the published run</small></span><span class="download-arrow" aria-hidden="true">↓</span></a>
+      
+    </div>
+  </section>
+
+  <section id="use" class="use-band">
+    <div class="wrap use-grid">
+      <div>
+        <p class="eyebrow ruled">Run locally</p>
+        <h2>Use it with your own data</h2>
+        <p>Keep the column headers, replace the example rows and put your fixture images in <code>assets/products/</code>. Use <code>--template</code> to point the generator at your own HTML.</p>
+        <a class="text-link" href="https://github.com/alexmercer-projects/quillmere-datasheet-generator">Read the setup and column rules <span aria-hidden="true">↗</span></a>
+      </div>
+      <pre><code>python3 tools/make_workbook.py
+python3 generate.py data/quillmere-products.xlsx --strict
+python3 tools/build_docs.py</code></pre>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="site-brand" href="#top"><svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="8"/><path d="M10 26h20M13 21a7 7 0 0 1 14 0M20 7v4m-9 2 3 3m15-3-3 3"/></svg><span><b>Quillmere Lighting Co.</b><small>Datasheet generator</small></span></a>
+    <p>Concept demo by Alex Mercer. All fixtures, specifications and ratings are example data.</p>
+  </div>
+</footer>
+</body>
+</html>

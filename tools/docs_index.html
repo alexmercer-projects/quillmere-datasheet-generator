@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="description" content="A portfolio concept demo that turns a product spreadsheet into print-ready lighting datasheets.">
+  <title>Quillmere Lighting Co. / Datasheet Generator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="filters.js" defer></script>
+</head>
+<body>
+<div class="am-demo-bar" role="note" style="font:14px/1.45 system-ui,-apple-system,'Segoe UI',sans-serif;background:#0f0f0f;color:#f3f3ef;padding:10px 16px;display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:space-between;align-items:center;position:relative;z-index:50"><span><b>Concept demo by Alex Mercer.</b> Fictional business, not client work. Quillmere Lighting Co., its products, specs and ratings are made up.</span><a href="../index.html" style="color:#f3f3ef;text-decoration:underline;text-underline-offset:3px">Back to Alex Mercer&#39;s portfolio</a></div>
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a class="site-brand" href="#top">{{mark}}<span><b>Quillmere Lighting Co.</b><small>Datasheet generator</small></span></a>
+    <nav aria-label="Project sections">
+      <a href="#workflow">Workflow</a><a href="#sheets">Sheets</a><a href="#downloads">Downloads</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero wrap" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="eyebrow ruled">Spreadsheet to PDF</p>
+      <h1 id="hero-title">16 products in one spreadsheet.<br><span>16 print-ready datasheets out.</span></h1>
+      <p class="lede">I built a small pipeline for a fictional lighting company. It reads each fixture from Excel, checks the data and print layout, then uses one template to make individual sheets and a combined catalog.</p>
+      <div class="actions">
+        <a class="button primary" href="#sheets">See the sheets <span aria-hidden="true">↓</span></a>
+        <a class="button" href="https://github.com/alexmercer-projects/quillmere-datasheet-generator">Read the code <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <figure class="hero-visual">
+      <div class="drawing-board">
+        <span class="board-label"><span></span> Print preview</span>
+        <a href="sheets/{{featured.sku}}.pdf" aria-label="Open the {{featured.name}} PDF">
+          <img src="img/featured.webp" width="960" height="1243" alt="Full Strata 420 sheet with a bollard drawing, specifications and finish swatches" fetchpriority="high">
+        </a>
+        <span class="board-size">8.5 × 11 IN</span>
+      </div>
+      <figcaption><span>{{featured.sku}} / {{featured.name}}</span><span>US Letter · PDF</span></figcaption>
+    </figure>
+  </section>
+
+  <section id="workflow" class="band workflow-band">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow ruled">Workflow</p>
+        <h2>How it works</h2>
+        <p>One row becomes one sheet. Editing the source values changes the next PDF export.</p>
+      </div>
+      <div class="workflow">
+        <article class="step">
+          <p class="eyebrow"><span>01</span> Spreadsheet</p>
+          <h3>Read the rows</h3>
+          <div class="table-scroll" tabindex="0" aria-label="Scrollable product spreadsheet excerpt">
+            <table>
+              <caption>Excerpt from the Products tab</caption>
+              <thead><tr><th scope="col">SKU</th><th scope="col">Product</th><th scope="col">lm</th><th scope="col">W</th></tr></thead>
+              <tbody>
+                {{#each excerpt}}<tr><td>{{sku}}</td><td>{{name}}</td><td>{{lumens}}</td><td>{{watts}}</td></tr>{{/each}}
+              </tbody>
+            </table>
+          </div>
+        </article>
+        <span class="flow-arrow" aria-hidden="true">→</span>
+        <article class="step code-step">
+          <p class="eyebrow"><span>02</span> HTML + CSS</p>
+          <h3>Fill the template</h3>
+          <pre><code>&lt;h1 data-fit&gt;<b>&#123;&#123;name&#125;&#125;</b>&lt;/h1&gt;
+&lt;p&gt;<b>&#123;&#123;tagline&#125;&#125;</b>&lt;/p&gt;
+
+<b>&#123;&#123;#each finish_options&#125;&#125;</b>
+  &lt;li&gt;<b>&#123;&#123;name&#125;&#125;</b>&lt;/li&gt;
+<b>&#123;&#123;/each&#125;&#125;</b></code></pre>
+        </article>
+        <span class="flow-arrow" aria-hidden="true">→</span>
+        <article class="step output-step">
+          <p class="eyebrow"><span>03</span> PDF</p>
+          <h3>Print the sheet</h3>
+          <a href="sheets/{{featured.sku}}.pdf">
+            <img src="img/{{featured.sku}}.webp" width="600" height="777" alt="Strata 420 finished datasheet" loading="lazy">
+            <span>Open the finished sheet <span aria-hidden="true">↗</span></span>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="checks" class="band wrap">
+    <div class="section-head">
+      <p class="eyebrow ruled">Validation</p>
+      <h2>What gets checked</h2>
+      <p>The generator checks the spreadsheet first, then measures the actual print layout in Chrome.</p>
+    </div>
+    <div class="check-grid">
+      <article class="check"><p class="eyebrow">01 / Identity</p><h3>Required fields and SKUs</h3><p>Finds empty cells and flags every row that shares a duplicate SKU.</p></article>
+      <article class="check"><p class="eyebrow">02 / Measurements</p><h3>Numbers and units</h3><p>Checks ranges, expects millimetres, kilograms and Celsius, and recalculates efficacy within 2%.</p></article>
+      <article class="check"><p class="eyebrow">03 / Content</p><h3>Images, finishes and length</h3><p>Checks local image files, known finish names and character limits for each text field.</p></article>
+      <article class="check"><p class="eyebrow">04 / Print</p><h3>Text fit and page count</h3><p>Measures marked text boxes after fonts load. Poppler confirms the PDF has exactly one page.</p></article>
+    </div>
+    <div class="example">
+      <div class="report-example">
+        <p class="eyebrow">Deliberately broken spreadsheet</p>
+        <h3>Example validation report</h3>
+        <p>{{bad_summary}}</p>
+        <ul class="findings">
+          {{#each findings}}<li><span class="severity {{severity}}">{{severity}}</span><div><strong>{{field}}</strong><span>{{message}}</span></div></li>{{/each}}
+        </ul>
+        <a class="text-link" href="files/example-validation-report.md">Read the example report <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="overflow-example">
+        <p class="eyebrow">Print layout example</p>
+        <h3>When a description runs long</h3>
+        <p>The longer description passes the 420-character limit. Chrome catches the part that falls below the text box.</p>
+        <div class="comparison">
+          <figure><img src="img/overflow-before.webp" width="640" height="380" loading="lazy" alt="Long description clipped before its final sentences"><figcaption>Before · overflow error</figcaption></figure>
+          <figure><img src="img/overflow-after.webp" width="640" height="380" loading="lazy" alt="Shortened description fitting on the Strata 420 sheet"><figcaption>After · fits the sheet</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sheets" class="band gallery-band">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow ruled">Output / US Letter</p>
+        <h2>The fixture sheets</h2>
+        <p>Browse all 16 fictional fixtures. Each preview opens its one-page PDF.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filter sheets by fixture family">
+        <button type="button" data-filter="" aria-pressed="true">All sheets</button>
+        {{#each families}}<button type="button" data-filter="{{name}}" aria-pressed="false">{{name}}</button>{{/each}}
+      </div>
+      <p class="sheet-count" aria-live="polite">16 sheets</p>
+      <div class="sheet-grid">
+        {{#each products}}
+        <article class="sheet-card" data-family="{{family}}">
+          <a href="sheets/{{sku}}.pdf">
+            <div class="thumb"><img src="img/{{sku}}.webp" width="600" height="777" alt="{{name}} datasheet preview with fixture line art" loading="lazy"></div>
+            <div class="card-label">
+              <p>{{family}} <span>·</span> {{sku}}</p>
+              <h3>{{name}}<span aria-hidden="true">↗</span></h3>
+            </div>
+          </a>
+        </article>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <section id="downloads" class="band wrap">
+    <div class="section-head">
+      <p class="eyebrow ruled">Project files</p>
+      <h2>Downloads</h2>
+    </div>
+    <div class="downloads">
+      {{#each downloads}}
+      <a href="{{href}}" download><span class="filetype">{{type}}</span><span><b>{{label}}</b><small>{{detail}}</small></span><span class="download-arrow" aria-hidden="true">↓</span></a>
+      {{/each}}
+    </div>
+  </section>
+
+  <section id="use" class="use-band">
+    <div class="wrap use-grid">
+      <div>
+        <p class="eyebrow ruled">Run locally</p>
+        <h2>Use it with your own data</h2>
+        <p>Keep the column headers, replace the example rows and put your fixture images in <code>assets/products/</code>. Use <code>--template</code> to point the generator at your own HTML.</p>
+        <a class="text-link" href="https://github.com/alexmercer-projects/quillmere-datasheet-generator">Read the setup and column rules <span aria-hidden="true">↗</span></a>
+      </div>
+      <pre><code>python3 tools/make_workbook.py
+python3 generate.py data/quillmere-products.xlsx --strict
+python3 tools/build_docs.py</code></pre>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="site-brand" href="#top">{{mark}}<span><b>Quillmere Lighting Co.</b><small>Datasheet generator</small></span></a>
+    <p>Concept demo by Alex Mercer. All fixtures, specifications and ratings are example data.</p>
+  </div>
+</footer>
+</body>
+</html>
